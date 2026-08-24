@@ -1,0 +1,24 @@
+@page { @bottom-center { content: "Autonom fahrender Bus \00B7 Benutzerhandbuch f\00FCr Fahrg\00E4ste \00B7 Seite " counter(page); } }
+
+/* Il testo tedesco della pagina iniziale e' piu' esteso dell'originale:
+   senza questa compattazione gli ultimi due passi finiscono da soli
+   sulla pagina successiva. */
+.flow-item { padding-bottom: 3.4mm; }
+.flow-title { font-size: 10.5pt; margin-bottom: 0.4mm; }
+.flow-text { font-size: 9pt; line-height: 1.45; }
+.box { padding: 3.2mm 4.5mm; margin: 3mm 0; font-size: 9.2pt; }
+h3 { margin: 5mm 0 1.5mm 0; }
+ul { margin-bottom: 2.5mm; }
+li { margin-bottom: 1mm; }
+p { margin-bottom: 2.5mm; }
+
+h2.sec { font-size: 16pt; }
+.rule-sm { margin-bottom: 4mm; }
+.flow-item { padding-bottom: 2.8mm; }
+.flow { margin-top: 3mm; }
+.box { padding: 2.8mm 4.5mm; margin: 2.5mm 0; }
+
+.flow-item { padding-bottom: 2.3mm; }
+.flow-text { font-size: 8.8pt; line-height: 1.4; }
+.flow-title { font-size: 10pt; }
+.box-ok { margin-top: 2mm; }

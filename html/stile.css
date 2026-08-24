@@ -1,0 +1,271 @@
+@page {
+  size: A4;
+  margin: 20mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Bus a guida autonoma · Manuale d'uso per i passeggeri · pag. " counter(page);
+    font-family: "DejaVu Sans", sans-serif;
+    font-size: 7.5pt;
+    color: #8A93A0;
+  }
+}
+@page cover { margin: 0; @bottom-center { content: ""; } }
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "DejaVu Sans", "Liberation Sans", sans-serif;
+  font-size: 10pt;
+  line-height: 1.55;
+  color: #2B3440;
+  margin: 0;
+}
+
+/* ---------- COPERTINA ---------- */
+.cover {
+  page: cover;
+  page-break-after: always;
+  height: 297mm;
+  width: 210mm;
+  background: linear-gradient(155deg, #17408B 0%, #2456A6 45%, #3D7AC9 100%);
+  color: #FFFFFF;
+  position: relative;
+  padding: 0;
+}
+.cover-inner { padding: 26mm 20mm 0 20mm; }
+.cover-logos {
+  background: #FFFFFF;
+  border-radius: 4mm;
+  padding: 5mm 7mm;
+  display: block;
+  width: 92mm;
+  margin-bottom: 22mm;
+}
+.cover-logos img.stemma { height: 17mm; vertical-align: middle; }
+.cover-logos img.kore { height: 11mm; vertical-align: middle; margin-left: 6mm; }
+.cover-eyebrow {
+  font-size: 10pt;
+  letter-spacing: 3.4pt;
+  text-transform: uppercase;
+  color: #BBD3F2;
+  margin-bottom: 6mm;
+}
+.cover h1 {
+  font-size: 40pt;
+  line-height: 1.05;
+  margin: 0 0 5mm 0;
+  font-weight: bold;
+  letter-spacing: -0.6pt;
+}
+.cover h2 {
+  font-size: 17pt;
+  font-weight: normal;
+  margin: 0 0 9mm 0;
+  color: #DCE9FA;
+}
+.cover-rule { width: 34mm; height: 1.6mm; background: #7FB2F0; border-radius: 1mm; margin-bottom: 9mm; }
+.cover-lead { font-size: 11.5pt; color: #E7F0FB; max-width: 128mm; line-height: 1.6; }
+.cover-badge {
+  position: absolute;
+  left: 20mm; right: 20mm; bottom: 20mm;
+  background: rgba(255,255,255,0.13);
+  border: 0.4mm solid rgba(255,255,255,0.35);
+  border-radius: 3mm;
+  padding: 6mm 7mm;
+  font-size: 9pt;
+  color: #EAF2FD;
+  line-height: 1.6;
+}
+.cover-badge strong { color: #FFFFFF; }
+.cover-badge .site { font-size: 12pt; font-weight: bold; color: #FFFFFF; }
+
+/* ---------- TIPOGRAFIA ---------- */
+h2.sec {
+  font-size: 18pt;
+  color: #17408B;
+  margin: 0 0 2mm 0;
+  letter-spacing: -0.3pt;
+}
+h3 { font-size: 12pt; color: #17408B; margin: 7mm 0 2mm 0; }
+p { margin: 0 0 3mm 0; text-align: justify; }
+ul { margin: 0 0 3mm 0; padding-left: 5mm; }
+li { margin-bottom: 1.4mm; }
+a { color: #1F5FB0; text-decoration: none; }
+.small { font-size: 8.5pt; color: #5A6472; }
+
+.kicker {
+  font-size: 8pt;
+  letter-spacing: 2.6pt;
+  text-transform: uppercase;
+  color: #7C8899;
+  margin-bottom: 1.5mm;
+}
+.rule-sm { width: 18mm; height: 1mm; background: #2456A6; border-radius: 1mm; margin: 0 0 6mm 0; }
+
+/* ---------- PASSI ---------- */
+.step { page-break-inside: avoid; margin-bottom: 9mm; }
+.step-head { margin-bottom: 3mm; }
+.step-num {
+  display: inline-block;
+  width: 9mm; height: 9mm;
+  background: #17408B;
+  color: #FFFFFF;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 9mm;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-right: 3.5mm;
+  vertical-align: middle;
+}
+.step-title {
+  display: inline-block;
+  font-size: 14pt;
+  font-weight: bold;
+  color: #17408B;
+  vertical-align: middle;
+}
+.shot {
+  border: 0.35mm solid #D3DAE4;
+  border-radius: 2.5mm;
+  padding: 2mm;
+  background: #F7F9FC;
+  margin: 3mm 0 2mm 0;
+}
+.shot img { width: 100%; display: block; border-radius: 1.5mm; }
+.shot-narrow { width: 108mm; margin-left: auto; margin-right: auto; }
+.caption { font-size: 8pt; color: #7C8899; text-align: center; margin: 0 0 2mm 0; }
+
+/* ---------- BOX ---------- */
+.box {
+  border-radius: 2.5mm;
+  padding: 4mm 5mm;
+  margin: 4mm 0;
+  font-size: 9.5pt;
+  page-break-inside: avoid;
+}
+.box p:last-child { margin-bottom: 0; }
+.box-info { background: #EDF3FC; border-left: 1.6mm solid #2456A6; }
+.box-ok { background: #EDF7F0; border-left: 1.6mm solid #2F7D4F; }
+.box-warn { background: #FDF4E4; border-left: 1.6mm solid #C08A1E; }
+.box b, .box strong { color: #17408B; }
+.box-ok strong { color: #24603D; }
+.box-warn strong { color: #8A620F; }
+
+/* ---------- TIMELINE ---------- */
+.flow { margin: 5mm 0 0 0; }
+.flow-item {
+  border-left: 1.2mm solid #C9D8EE;
+  padding: 0 0 5mm 7mm;
+  position: relative;
+  page-break-inside: avoid;
+}
+.flow-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+.flow-dot {
+  position: absolute;
+  left: -4.6mm; top: 0;
+  width: 8mm; height: 8mm;
+  border-radius: 50%;
+  background: #2456A6;
+  color: #FFF;
+  font-size: 10pt;
+  font-weight: bold;
+  text-align: center;
+  line-height: 8mm;
+}
+.flow-title { font-weight: bold; color: #17408B; font-size: 11pt; margin-bottom: 0.8mm; }
+.flow-text { font-size: 9.5pt; color: #48525F; }
+
+/* ---------- TABELLE ---------- */
+table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 3mm 0 4mm 0; }
+th {
+  background: #17408B; color: #FFFFFF; text-align: left;
+  padding: 2.4mm 3mm; font-size: 8.5pt; letter-spacing: 0.4pt;
+}
+td { padding: 2.4mm 3mm; border-bottom: 0.25mm solid #E1E7EF; vertical-align: top; }
+tr:nth-child(even) td { background: #F7F9FC; }
+td.k { width: 38%; font-weight: bold; color: #17408B; }
+
+/* ---------- CARD GRIGLIA ---------- */
+.cards { margin: 4mm 0; }
+.card {
+  border: 0.35mm solid #DCE3EC;
+  border-radius: 2.5mm;
+  padding: 4mm 5mm;
+  margin-bottom: 3mm;
+  page-break-inside: avoid;
+}
+.card-q { font-weight: bold; color: #17408B; margin-bottom: 1.2mm; font-size: 10pt; }
+.card-a { font-size: 9.5pt; color: #48525F; }
+.card-a p { margin-bottom: 0; }
+
+/* ---------- CHIUSURA ---------- */
+.end-band {
+  background: #17408B;
+  color: #FFFFFF;
+  border-radius: 3mm;
+  padding: 7mm 8mm;
+  margin-top: 6mm;
+}
+.end-band h3 { color: #FFFFFF; margin-top: 0; font-size: 14pt; }
+.end-band p { color: #DCE9FA; }
+.end-band a { color: #FFFFFF; font-weight: bold; }
+.colophon { font-size: 8pt; color: #7C8899; margin-top: 7mm; line-height: 1.6; }
+.pagebreak { page-break-before: always; }
+
+/* ---------- LAYOUT AFFIANCATO ---------- */
+table.split { width: 100%; border-collapse: collapse; margin: 0; }
+table.split td { border: none; padding: 0; background: none !important; vertical-align: top; }
+td.txt { width: 53%; padding-right: 6mm !important; }
+td.pic { width: 47%; }
+td.pic .shot { margin-top: 0; }
+td.txt .box { margin-top: 0; }
+.step-head { margin-bottom: 3.5mm; page-break-after: avoid; }
+h3 { page-break-after: avoid; }
+
+/* compattazione: lo step puo' spezzarsi fra i blocchi, ma non dentro un blocco */
+.step { page-break-inside: auto; }
+table.split { page-break-inside: avoid; }
+.shot { page-break-inside: avoid; }
+
+.sec-gap { height: 9mm; border-top: 0.3mm solid #E1E7EF; margin-top: 8mm; page-break-before: auto; }
+.sec-gap + .kicker { page-break-after: avoid; }
+
+.end-logos { text-align: center; margin-top: 8mm; }
+.end-logos .stemma-end { height: 16mm; vertical-align: middle; }
+.end-logos .kore-end { height: 10mm; vertical-align: middle; margin-left: 7mm; }
+
+/* compattazione pagina finale */
+.end-band { padding: 5.5mm 7mm; margin-top: 4mm; }
+.end-logos { margin-top: 4mm; }
+.end-logos .stemma-end { height: 13mm; }
+.end-logos .kore-end { height: 8mm; }
+.colophon { margin-top: 4mm; font-size: 7.5pt; }
+
+/* ultima pagina: tabella promemoria piu' compatta */
+.compact td { padding: 1.9mm 3mm; }
+.compact th { padding: 2mm 3mm; }
+
+/* ---------- QR IN COPERTINA ---------- */
+table.badge-grid { width: 100%; border-collapse: collapse; }
+table.badge-grid td { border: none; padding: 0; background: none; vertical-align: middle; }
+td.badge-qr { width: 34mm; padding-right: 7mm !important; text-align: center; }
+.qr-frame {
+  background: #FFFFFF;
+  border-radius: 2.5mm;
+  padding: 2.5mm;
+}
+.qr-frame img { width: 100%; display: block; }
+.qr-label {
+  font-size: 7pt;
+  letter-spacing: 0.6pt;
+  text-transform: uppercase;
+  color: #CFE0F6;
+  margin-top: 2mm;
+}
+td.badge-txt { font-size: 9pt; color: #EAF2FD; line-height: 1.6; }
+
+/* QR copertina: dimensione definitiva */
+td.badge-qr { width: 44mm; padding-right: 9mm !important; }
+.qr-frame { padding: 3mm; }
+.qr-label { font-size: 7.5pt; margin-top: 2.5mm; }
+.cover-badge { padding: 7mm 8mm; }

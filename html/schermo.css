@@ -1,0 +1,60 @@
+/* Versione da leggere nel browser.
+   Il foglio della stampa resta quello: qui si ricostruisce soltanto la pagina
+   A4 come colonna centrata, perche' il corpo del manuale e' misurato in
+   millimetri e cambiarne la larghezza scomporrebbe le figure affiancate. */
+
+/* Tutto qui dentro vale solo a schermo: weasyprint compone per la
+   stampa e ignora questo blocco, cosi' gli stessi documenti servono
+   sia per il browser sia per i PDF. */
+@media screen {
+  html {
+    background: #E9EDF2;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    width: 210mm;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20mm 16mm 18mm 16mm;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 1px rgba(23, 64, 139, .08), 0 6px 28px rgba(23, 64, 139, .10);
+  }
+
+  /* La copertina occupa tutta la larghezza: annulla il margine del corpo. */
+  .cover {
+    margin: -20mm -16mm 12mm -16mm;
+    width: auto;
+    height: auto;
+    min-height: 240mm;
+    padding-bottom: 24mm;
+  }
+
+  /* Nella stampa il riquadro con il QR e' ancorato in fondo al foglio; senza
+     un'altezza fissa finirebbe sopra il testo di apertura. */
+  .cover-badge {
+    position: static;
+    margin: 14mm 20mm 0 20mm;
+  }
+
+  /* Le interruzioni di pagina non hanno senso a schermo: al loro posto una
+     riga sottile, cosi' si continua a percepire dove finisce una sezione. */
+  .pagebreak {
+    border-top: .3mm solid #E1E7EF;
+    margin: 10mm 0 8mm 0;
+  }
+
+  /* Su telefono la pagina A4 non ci sta: si passa a una colonna sola e le
+     figure smettono di stare accanto al testo. */
+  @media (max-width: 800px) {
+    body { padding: 6mm 5mm 10mm 5mm; }
+    .cover { margin: -6mm -5mm 8mm -5mm; min-height: 0; padding-bottom: 14mm; }
+    .cover-inner { padding: 12mm 7mm 0 7mm; }
+    .cover h1 { font-size: 30pt; }
+    table.split, table.split tbody, table.split tr { display: block; width: 100%; }
+    table.split td { display: block; width: 100% !important; }
+    .shot-narrow { width: 100%; }
+    table.badge-grid, table.badge-grid tbody, table.badge-grid tr,
+    table.badge-grid td { display: block; width: 100% !important; }
+  }
+}
