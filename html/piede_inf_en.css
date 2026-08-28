@@ -1,0 +1,7 @@
+/* Il piede dello stile porta il titolo del manuale italiano: qui il documento
+   e' un altro e in un'altra lingua, e la riga in fondo deve dirlo. */
+@page {
+  @bottom-center {
+    content: "Self-driving bus · Notices for passengers · page " counter(page);
+  }
+}

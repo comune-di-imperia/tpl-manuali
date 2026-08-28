@@ -13,8 +13,14 @@ guida per il personale di bordo e la locandina per le fermate.
 
 | Cartella | Contenuto |
 |---|---|
-| `html/` | i manuali dei passeggeri in italiano, inglese, francese, tedesco e spagnolo |
-| `pdf/` | gli stessi manuali impaginati, piu' la guida di bordo e la locandina |
+| `html/` | manuali e informative per i passeggeri, nelle cinque lingue |
+| `pdf/` | gli stessi documenti impaginati, piu' la guida di bordo e la locandina |
+
+Le **informative** sono due documenti in uno: quella sui rischi e sulle
+modalita' della sperimentazione, ai sensi del D.M. 28 febbraio 2018 n. 70, e
+quella sul trattamento dei dati personali ai sensi dell'articolo 13 del GDPR.
+Il testo che fa fede e' l'italiano; le altre lingue portano in apertura
+l'avviso che la traduzione e' di cortesia.
 
 I documenti in `html/` non sono una versione ridotta dei PDF: **sono la stessa
 cosa**. I PDF nascono da questi file, e la resa a schermo e quella stampata si
@@ -45,6 +51,21 @@ weasyprint -s stile.css -s piede_de.css html/manuale-de.html manuale-de.pdf
 ```
 
 Per l'italiano il piede e' gia' dentro `stile.css` e il secondo `-s` non serve.
+
+## Che cosa dicono i documenti, e perche' cambia
+
+I manuali seguono l'applicazione, e l'applicazione cambia. Due revisioni
+recenti, chieste dal Responsabile della protezione dei dati del Comune:
+
+- della persona si conserva la sola **fascia d'eta'** — 6-13, 14-30, 31-65,
+  oltre 65 — e non piu' la data di nascita, che non viene nemmeno chiesta;
+  all'operatore, alla salita, compaiono soltanto nome e cognome;
+- la **casella del consenso sta prima dei campi**, non dopo, e si sblocca solo
+  dopo aver premuto *Ho letto l'informativa*: il consenso precede la raccolta.
+
+Chi aggiorna questi documenti guardi prima l'applicazione in esercizio: un
+manuale che mostra pulsanti diversi da quelli veri confonde piu' di quanto
+aiuti.
 
 ## Rifare le figure
 

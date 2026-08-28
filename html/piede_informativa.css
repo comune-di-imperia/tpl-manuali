@@ -1,0 +1,7 @@
+/* Il piede dello stile porta il titolo del manuale: qui il documento e' un
+   altro, e la riga in fondo deve dirlo. */
+@page {
+  @bottom-center {
+    content: "Bus a guida autonoma · Informative per i passeggeri · pag. " counter(page);
+  }
+}
